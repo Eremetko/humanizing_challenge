@@ -31,6 +31,7 @@ const actions: ActionTree<AuthState, RootState> = {
     if (hasUser && hasUser === password) {
       commit("setAuth", true);
       localStorage.setItem("isAuth", "1");
+      router.push("/");
     }
   },
   logout({ commit }): void {
