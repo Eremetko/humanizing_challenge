@@ -1,9 +1,12 @@
-import { createStore } from "vuex";
-
-export default createStore({
+import Vuex, { StoreOptions } from "vuex";
+import { RootState } from "@/store/types";
+import { auth } from "./modules/auth";
+const store: StoreOptions<RootState> = {
   state: {},
   getters: {},
   mutations: {},
   actions: {},
-  modules: {},
-});
+  modules: { auth },
+};
+
+export default new Vuex.Store<RootState>(store);
